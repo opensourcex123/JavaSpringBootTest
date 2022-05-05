@@ -1,5 +1,6 @@
 package com.nfx.springbootdemo02.server.controller;
 
+import com.nfx.springbootdemo02.dao.model.Admin;
 import com.nfx.springbootdemo02.dao.model.Product;
 import com.nfx.springbootdemo02.dao.model.User;
 import com.nfx.springbootdemo02.server.domain.http.ResultData;
@@ -18,6 +19,35 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserServiceImpl userService;
+
+    @PostMapping("/login")
+    public ResultData login(@RequestBody User user) throws Exception {
+        User userTable = userService.login(user);
+        if (userTable == null) {
+            return ResultData.failure("用户不存在");
+        }
+        if (!userTable.getPassword().equals(user.getPassword())) {
+            throw new Exception("用户名或密码错误！");
+        }
+        if (userTable.getStatus() != 1) {
+            return ResultData.failure("用户还未通过审核");
+        }
+        return ResultData.success(userTable.getName());
+    }
+
+    @PostMapping("/logout")
+    public ResultData logout() {
+        return ResultData.success("退出登陆");
+    }
+
+    @PostMapping("/getDataByName")
+    public ResultData getDataByName(@RequestBody User user) throws Exception {
+        User userTable = userService.getDataByName(user);
+        if (userTable == null) {
+            throw new Exception("未获取到数据");
+        }
+        return ResultData.success(userTable);
+    }
 
     @PostMapping("/get")
     public ResultData getAllData() throws Exception {

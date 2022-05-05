@@ -3,6 +3,7 @@ package com.nfx.springbootdemo02.dao.repo;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.nfx.springbootdemo02.dao.mapper.UserMapper;
+import com.nfx.springbootdemo02.dao.model.Admin;
 import com.nfx.springbootdemo02.dao.model.Product;
 import com.nfx.springbootdemo02.dao.model.User;
 import org.springframework.stereotype.Repository;
@@ -14,6 +15,21 @@ import java.util.List;
 public class UserDao extends ServiceImpl<UserMapper, User> {
     @Resource
     private UserMapper userMapper;
+
+    public User login(String userName, String password) {
+        QueryWrapper<User> wrapper = new QueryWrapper<User>();
+        wrapper.eq("name", userName);
+
+        return userMapper.selectOne(wrapper);
+    }
+
+    public User getDataByName(String name) {
+        QueryWrapper<User> wrapper = new QueryWrapper<User>();
+        wrapper.eq("name", name);
+
+        return userMapper.selectOne(wrapper);
+
+    }
 
     public List<User> getAllData(){
         return userMapper.selectList(null);

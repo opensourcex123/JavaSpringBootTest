@@ -1,5 +1,6 @@
 package com.nfx.springbootdemo02.server.service.impl;
 
+import com.nfx.springbootdemo02.dao.model.Admin;
 import com.nfx.springbootdemo02.dao.model.User;
 import com.nfx.springbootdemo02.dao.repo.UserDao;
 import com.nfx.springbootdemo02.server.service.IUserService;
@@ -16,8 +17,18 @@ public class UserServiceImpl implements IUserService {
     UserDao userDao;
 
     @Override
+    public User login(User user) {
+        return userDao.login(user.getName(), user.getPassword());
+    }
+
+    @Override
     public List<User> getAllData() {
         return userDao.getAllData();
+    }
+
+    @Override
+    public User getDataByName(User user) {
+        return userDao.getDataByName(user.getName());
     }
 
     @Override

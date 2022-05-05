@@ -25,6 +25,9 @@ public class User extends BaseModel {
     @TableField(value = "password")
     private String password;
 
+    @TableField(value = "avatar")
+    private String avatar;
+
     @TableField(value = "phone_number")
     private String phoneNumber;
 
