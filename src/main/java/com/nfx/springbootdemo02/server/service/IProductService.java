@@ -9,4 +9,5 @@ public interface IProductService {
     int updateStatus(Product product);
     List<Product> getCheckingData();
     int createProduct(Product product);
+    List<Product> getProductByPublisherName(Product product);
 }

@@ -56,4 +56,15 @@ public class ProductController {
         }
         return ResultData.success("创建成功");
     }
+
+    @PostMapping("/getProductByPublisherName")
+    public ResultData getProductByPublisherName(@RequestBody Product product) throws Exception {
+        List<Product> productList = productService.getProductByPublisherName(product);
+        if (productList == null) {
+            throw new Exception("未获取到数据");
+        }
+        return ResultData.success(productList);
+    }
+
+
 }

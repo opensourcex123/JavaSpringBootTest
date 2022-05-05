@@ -37,4 +37,9 @@ public class ProductServiceImpl implements IProductService {
         product.setPurchaseNumber(0);
         return productDao.createProduct(product);
     }
+
+    @Override
+    public List<Product> getProductByPublisherName(Product product) {
+        return productDao.getProductByPublisherName(product.getPublisherName());
+    }
 }
