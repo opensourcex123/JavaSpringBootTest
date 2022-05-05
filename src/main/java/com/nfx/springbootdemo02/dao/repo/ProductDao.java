@@ -31,4 +31,15 @@ public class ProductDao extends ServiceImpl<ProductMapper, Product> {
 
         return productMapper.selectList(wrapper);
     }
+
+    public int createProduct(Product product) {
+        return productMapper.insert(product);
+    }
+
+    public List<Product> getProductByPublisherName(String publisherName) {
+        QueryWrapper<Product> wrapper = new QueryWrapper<>();
+        wrapper.eq("publisher_name", publisherName);
+
+        return productMapper.selectList(wrapper);
+    }
 }

@@ -30,4 +30,11 @@ public class ProductServiceImpl implements IProductService {
     public List<Product> getCheckingData() {
         return productDao.getCheckingData();
     }
+
+    @Override
+    public int createProduct(Product product) {
+        product.setStatus(0);
+        product.setPurchaseNumber(0);
+        return productDao.createProduct(product);
+    }
 }

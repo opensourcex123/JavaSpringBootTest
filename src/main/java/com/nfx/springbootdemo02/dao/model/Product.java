@@ -22,6 +22,9 @@ public class Product extends BaseModel {
     @TableField(value = "product_image")
     private String productImage;
 
+    @TableField(value = "publisher_name")
+    private String publisherName;
+
     @TableField(value = "product_price")
     private Integer productPrice;
 

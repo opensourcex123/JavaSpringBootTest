@@ -47,4 +47,13 @@ public class ProductController {
         }
         return ResultData.success(productList);
     }
+
+    @PostMapping("/createProduct")
+    public ResultData createProduct(@RequestBody Product product) throws Exception {
+        int res = productService.createProduct(product);
+        if (res != 1) {
+            throw new Exception("创建失败！");
+        }
+        return ResultData.success("创建成功");
+    }
 }

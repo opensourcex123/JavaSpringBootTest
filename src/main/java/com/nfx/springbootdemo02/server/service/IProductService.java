@@ -8,4 +8,5 @@ public interface IProductService {
     List<Product> getAllData();
     int updateStatus(Product product);
     List<Product> getCheckingData();
+    int createProduct(Product product);
 }
