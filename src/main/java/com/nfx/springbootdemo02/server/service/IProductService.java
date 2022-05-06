@@ -10,4 +10,5 @@ public interface IProductService {
     List<Product> getCheckingData();
     int createProduct(Product product);
     List<Product> getProductByPublisherName(Product product);
+    int deleteProduct(Product product);
 }

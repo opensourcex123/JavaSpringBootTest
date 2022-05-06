@@ -42,4 +42,9 @@ public class ProductServiceImpl implements IProductService {
     public List<Product> getProductByPublisherName(Product product) {
         return productDao.getProductByPublisherName(product.getPublisherName());
     }
+
+    @Override
+    public int deleteProduct(Product product) {
+        return productDao.deleteProduct(product.getId());
+    }
 }

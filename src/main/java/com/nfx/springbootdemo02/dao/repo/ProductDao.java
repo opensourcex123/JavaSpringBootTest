@@ -42,4 +42,8 @@ public class ProductDao extends ServiceImpl<ProductMapper, Product> {
 
         return productMapper.selectList(wrapper);
     }
+
+    public int deleteProduct(long id) {
+        return productMapper.deleteById(id);
+    }
 }

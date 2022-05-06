@@ -66,5 +66,13 @@ public class ProductController {
         return ResultData.success(productList);
     }
 
+    @PostMapping("/deleteProduct")
+    public ResultData deleteProduct(@RequestBody Product product) throws Exception {
+        int res = productService.deleteProduct(product);
+        if (res != 1) {
+            throw new Exception("下架失败！");
+        }
+        return ResultData.success("下架成功");
+    }
 
 }
