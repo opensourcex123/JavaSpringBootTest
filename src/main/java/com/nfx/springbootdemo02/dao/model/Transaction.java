@@ -16,11 +16,14 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @TableName(value = "transaction")
 public class Transaction extends BaseModel {
+    @TableField(value = "product_name")
+    private String productName;
+
     @TableField(value = "payer")
-    private Integer payer;
+    private String payer;
 
     @TableField(value = "payee")
-    private Integer payee;
+    private String payee;
 
     @TableField(value = "money")
     private Integer money;

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ITransactionService {
     List<Transaction> getAllData();
+    List<Transaction> getDataByPayee(Transaction transaction);
 }

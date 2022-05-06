@@ -19,4 +19,9 @@ public class TransactionServiceImpl implements ITransactionService {
     public List<Transaction> getAllData() {
         return transactionDao.getAllData();
     }
+
+    @Override
+    public List<Transaction> getDataByPayee(Transaction transaction) {
+        return transactionDao.getDataByPayee(transaction.getPayee());
+    }
 }
