@@ -25,4 +25,11 @@ public class TransactionDao extends ServiceImpl<TransactionMapper, Transaction> 
 
         return transactionMapper.selectList(wrapper);
     }
+
+    public List<Transaction> getDataByPayer(String payer) {
+        QueryWrapper<Transaction> wrapper = new QueryWrapper<>();
+        wrapper.eq("payer", payer);
+
+        return transactionMapper.selectList(wrapper);
+    }
 }

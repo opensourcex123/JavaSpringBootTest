@@ -36,4 +36,13 @@ public class TransactionController {
         }
         return ResultData.success(transactions);
     }
+
+    @PostMapping("/getTransactionByPayer")
+    public ResultData getTransactionByPayer(@RequestBody Transaction transaction) throws Exception {
+        List<Transaction> transactions = transactionService.getDataByPayer(transaction);
+        if (transactions.isEmpty()) {
+            return ResultData.success("无数据");
+        }
+        return ResultData.success(transactions);
+    }
 }
