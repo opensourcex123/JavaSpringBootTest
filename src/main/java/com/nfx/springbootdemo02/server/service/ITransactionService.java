@@ -8,4 +8,5 @@ public interface ITransactionService {
     List<Transaction> getAllData();
     List<Transaction> getDataByPayee(Transaction transaction);
     List<Transaction> getDataByPayer(Transaction transaction);
+    int receiveProduct(Transaction transaction);
 }

@@ -32,4 +32,8 @@ public class TransactionDao extends ServiceImpl<TransactionMapper, Transaction> 
 
         return transactionMapper.selectList(wrapper);
     }
+
+    public Transaction getDataById(long id) {
+        return transactionMapper.selectById(id);
+    }
 }

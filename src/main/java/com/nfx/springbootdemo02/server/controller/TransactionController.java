@@ -45,4 +45,14 @@ public class TransactionController {
         }
         return ResultData.success(transactions);
     }
+
+    @PostMapping("/receiveProduct")
+    public ResultData receiveProduct(@RequestBody Transaction transaction) throws Exception {
+        int res = transactionService.receiveProduct(transaction);
+        if (res != 1) {
+            throw new Exception("失败");
+        }
+
+        return ResultData.success("success");
+    }
 }

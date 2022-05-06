@@ -60,6 +60,15 @@ public class UserDao extends ServiceImpl<UserMapper, User> {
         return userMapper.updateById(user);
     }
 
+    public int updateIncomeByName(String name, int income) {
+        User user = new User();
+        user.setIncome(income);
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("name", name);
+
+        return userMapper.update(user, wrapper);
+    }
+
     public int updateLevel(long id, int level) {
         User user = new User();
         user.setId(id);
