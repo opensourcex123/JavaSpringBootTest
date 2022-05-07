@@ -38,7 +38,8 @@ public class TransactionServiceImpl implements ITransactionService {
         int payeeMoney;
         int adminMoney = 0;
         int money;
-        Transaction transactionTable = transactionDao.getDataById(transaction.getId());
+        long id = transaction.getId();
+        Transaction transactionTable = transactionDao.getDataById(id);
         money = transactionTable.getMoney();
         // 获取应该给卖家和平台的钱
         switch (transactionTable.getBusinessLevel()) {
@@ -70,7 +71,8 @@ public class TransactionServiceImpl implements ITransactionService {
         // 给平台即admin收入
         preIncome = userDao.getDataByName("admin").getIncome();
         userDao.updateIncomeByName("admin", preIncome + adminMoney);
-
+        // 将交易的是否收货改为是
+        transactionDao.updateIsReceive(id, 1);
         return 1;
     }
 }

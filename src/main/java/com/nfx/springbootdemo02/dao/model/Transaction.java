@@ -30,4 +30,7 @@ public class Transaction extends BaseModel {
 
     @TableField(value = "business_level")
     private Integer businessLevel;
+
+    @TableField(value = "is_receive")
+    private Integer isReceive;
 }

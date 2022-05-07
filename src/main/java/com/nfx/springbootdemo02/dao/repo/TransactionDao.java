@@ -36,4 +36,12 @@ public class TransactionDao extends ServiceImpl<TransactionMapper, Transaction> 
     public Transaction getDataById(long id) {
         return transactionMapper.selectById(id);
     }
+
+    public int updateIsReceive(long id, int isReceive) {
+        Transaction transaction = new Transaction();
+        transaction.setId(id);
+        transaction.setIsReceive(isReceive);
+
+        return transactionMapper.updateById(transaction);
+    }
 }
