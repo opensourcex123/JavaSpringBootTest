@@ -26,4 +26,15 @@ public class ReturnRequestController {
         }
         return ResultData.success(returnRequests);
     }
+
+    @PostMapping("/updateReturnRequest")
+    public ResultData updateReturnRequest(@RequestBody ReturnRequest returnRequest) throws Exception {
+        int res = returnRequestService.updateReturnRequestById(returnRequest);
+
+        if (res != 1) {
+            throw new Exception("更新失败！");
+        }
+
+        return ResultData.success("更新成功");
+    }
 }

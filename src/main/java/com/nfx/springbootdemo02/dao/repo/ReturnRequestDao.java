@@ -20,4 +20,13 @@ public class ReturnRequestDao extends ServiceImpl<ReturnRequestMapper, ReturnReq
 
         return returnRequestMapper.selectList(wrapper);
     }
+
+    public int updateDataById(long id, int status, String rejectMessage) {
+        ReturnRequest returnRequest = new ReturnRequest();
+        returnRequest.setId(id);
+        returnRequest.setStatus(status);
+        returnRequest.setRejectMessage(rejectMessage);
+
+        return returnRequestMapper.updateById(returnRequest);
+    }
 }

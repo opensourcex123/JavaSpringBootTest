@@ -17,4 +17,9 @@ public class ReturnRequestServiceImpl implements IReturnRequestService {
     public List<ReturnRequest> getReturnRequestByBusiness(ReturnRequest returnRequest) {
         return returnRequestDao.getDataByBusinessMan(returnRequest.getBusinessMan());
     }
+
+    @Override
+    public int updateReturnRequestById(ReturnRequest returnRequest) {
+        return returnRequestDao.updateDataById(returnRequest.getId(), returnRequest.getStatus(), returnRequest.getRejectMessage());
+    }
 }
