@@ -79,4 +79,11 @@ public class UserDao extends ServiceImpl<UserMapper, User> {
     public int deleteData(long id) {
         return userMapper.deleteById(id);
     }
+
+    public int updateFavorableRate(long id, double rating) {
+        User user = new User();
+        user.setId(id);
+        user.setFavorableRate(rating);
+        return userMapper.updateById(user);
+    }
 }
