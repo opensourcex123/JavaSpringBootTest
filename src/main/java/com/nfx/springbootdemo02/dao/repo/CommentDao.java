@@ -22,4 +22,8 @@ public class CommentDao extends ServiceImpl<CommentMapper, Comment> {
 
         return commentMapper.selectList(wrapper);
     }
+
+    public List<Comment> getAllComment() {
+        return commentMapper.selectList(null);
+    }
 }
