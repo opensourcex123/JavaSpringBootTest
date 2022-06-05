@@ -61,4 +61,7 @@ public class User extends BaseModel {
 
     @TableField(value = "favorable_rate")
     private Double favorableRate;
+
+    @TableField(value = "point")
+    private Integer point;
 }
