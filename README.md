@@ -1,2 +1,2 @@
 # JavaSpringBootTest
-springboot的测试项目
+springboot的电商平台后台管理项目
