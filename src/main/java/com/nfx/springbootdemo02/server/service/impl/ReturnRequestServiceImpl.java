@@ -23,6 +23,11 @@ public class ReturnRequestServiceImpl implements IReturnRequestService {
     }
 
     @Override
+    public List<ReturnRequest> getReturnRequestByUserName(ReturnRequest returnRequest) {
+        return returnRequestDao.getDataByUserName(returnRequest.getUserName());
+    }
+
+    @Override
     public int updateReturnRequestById(ReturnRequest returnRequest) {
         ReturnRequest returnRequestTable = returnRequestDao.getById(returnRequest.getId());
         if (returnRequest.getStatus() == 1) {

@@ -27,6 +27,15 @@ public class ReturnRequestController {
         return ResultData.success(returnRequests);
     }
 
+    @PostMapping("/getReturnRequestByUserName")
+    public ResultData getReturnRequestByUserName(@RequestBody ReturnRequest returnRequest) throws Exception {
+        List<ReturnRequest> returnRequests = returnRequestService.getReturnRequestByUserName(returnRequest);
+        if (returnRequests.isEmpty()) {
+            return ResultData.success("无数据");
+        }
+        return ResultData.success(returnRequests);
+    }
+
     @PostMapping("/updateReturnRequest")
     public ResultData updateReturnRequest(@RequestBody ReturnRequest returnRequest) throws Exception {
         int res = returnRequestService.updateReturnRequestById(returnRequest);

@@ -21,6 +21,13 @@ public class ReturnRequestDao extends ServiceImpl<ReturnRequestMapper, ReturnReq
         return returnRequestMapper.selectList(wrapper);
     }
 
+    public List<ReturnRequest> getDataByUserName(String userName) {
+        QueryWrapper<ReturnRequest> wrapper = new QueryWrapper<>();
+        wrapper.eq("user_name", userName);
+
+        return returnRequestMapper.selectList(wrapper);
+    }
+
     public int updateDataById(long id, int status, String rejectMessage) {
         ReturnRequest returnRequest = new ReturnRequest();
         returnRequest.setId(id);

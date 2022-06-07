@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface IReturnRequestService {
     List<ReturnRequest> getReturnRequestByBusiness(ReturnRequest returnRequest);
+    List<ReturnRequest> getReturnRequestByUserName(ReturnRequest returnRequest);
     int updateReturnRequestById(ReturnRequest returnRequest);
 }
