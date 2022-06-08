@@ -33,4 +33,7 @@ public class Transaction extends BaseModel {
 
     @TableField(value = "is_receive")
     private Integer isReceive;
+
+    @TableField(value = "is_pay")
+    private Integer isPay;
 }
