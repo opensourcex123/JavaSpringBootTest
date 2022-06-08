@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.nfx</groupId>
     <artifactId>springboot-demo02</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+<!--    <version>0.0.1-SNAPSHOT</version>-->
     <name>springboot-demo02</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -78,17 +78,17 @@
             <version>4.4</version>
         </dependency>
     </dependencies>
-<!--     <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.testcontainers</groupId>
-                <artifactId>testcontainers-bom</artifactId>
-                <version>${testcontainers.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement> -->
+<!--    <dependencyManagement>-->
+<!--        <dependencies>-->
+<!--            <dependency>-->
+<!--                <groupId>org.testcontainers</groupId>-->
+<!--                <artifactId>testcontainers-bom</artifactId>-->
+<!--                <version>${testcontainers.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
+<!--        </dependencies>-->
+<!--    </dependencyManagement>-->
 
     <build>
         <plugins>
