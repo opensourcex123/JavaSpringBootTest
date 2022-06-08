@@ -1,0 +1,11 @@
+stages:
+  - pipeline: 流水线-1
+    steps:
+      - name: test
+        module: docker
+        image: maven
+        command:
+          - mvn package
+          - java -jar target/springboot-demo02-2.6.5.jar
+          - cd ./target
+          - ls
