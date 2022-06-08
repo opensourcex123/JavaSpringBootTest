@@ -5,5 +5,5 @@ stages:
         module: docker
         image: maven:3-jdk-10
         command:
-          - ls
           - mvn clean package
+          - ls
