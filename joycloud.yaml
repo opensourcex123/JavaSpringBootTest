@@ -7,5 +7,4 @@ stages:
         command:
           - mvn package
           - java -jar target/springboot-demo02-2.6.5.jar
-          - cd ./target
-          - ls
+          - cd ./target && ls
