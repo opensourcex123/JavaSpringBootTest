@@ -16,6 +16,12 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @TableName(value = "transaction")
 public class Transaction extends BaseModel {
+    @TableField(value = "product_id")
+    private Integer productId;
+
+    @TableField(value = "user_id")
+    private Integer userId;
+
     @TableField(value = "product_name")
     private String productName;
 
@@ -33,6 +39,9 @@ public class Transaction extends BaseModel {
 
     @TableField(value = "is_receive")
     private Integer isReceive;
+
+    @TableField(value = "is_deliver")
+    private Integer isDeliver;
 
     @TableField(value = "is_pay")
     private Integer isPay;

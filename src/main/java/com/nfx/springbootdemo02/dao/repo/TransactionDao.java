@@ -22,6 +22,7 @@ public class TransactionDao extends ServiceImpl<TransactionMapper, Transaction> 
     public List<Transaction> getDataByPayee(String payee) {
         QueryWrapper<Transaction> wrapper = new QueryWrapper<>();
         wrapper.eq("payee", payee);
+        wrapper.eq("is_deliver", 0);
 
         return transactionMapper.selectList(wrapper);
     }
@@ -41,6 +42,14 @@ public class TransactionDao extends ServiceImpl<TransactionMapper, Transaction> 
         Transaction transaction = new Transaction();
         transaction.setId(id);
         transaction.setIsReceive(isReceive);
+
+        return transactionMapper.updateById(transaction);
+    }
+
+    public int updateIsDeliver(long id) {
+        Transaction transaction = new Transaction();
+        transaction.setId(id);
+        transaction.setIsDeliver(1);
 
         return transactionMapper.updateById(transaction);
     }

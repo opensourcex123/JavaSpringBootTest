@@ -47,4 +47,14 @@ public class ProductServiceImpl implements IProductService {
     public int deleteProduct(Product product) {
         return productDao.deleteProduct(product.getId());
     }
+
+    @Override
+    public int reduceStorage(Product product) {
+        Product productTable = productDao.getById(product.getId());
+        int curStorage = productTable.getProductStock() - 1;
+        if (curStorage < 0) {
+            return -1;
+        }
+        return productDao.updateStorage(product.getId(), curStorage);
+    }
 }

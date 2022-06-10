@@ -75,4 +75,13 @@ public class ProductController {
         return ResultData.success("下架成功");
     }
 
+    @PostMapping("/reduceStorage")
+    public ResultData reduceStorage(@RequestBody Product product) throws Exception {
+        int res = productService.reduceStorage(product);
+        if (res != 1) {
+            throw new Exception("库存不足！");
+        }
+        return ResultData.success("发货成功");
+    }
+
 }

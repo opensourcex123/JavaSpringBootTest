@@ -9,4 +9,5 @@ public interface ITransactionService {
     List<Transaction> getDataByPayee(Transaction transaction);
     List<Transaction> getDataByPayer(Transaction transaction);
     int receiveProduct(Transaction transaction);
+    int updateTransaction(Transaction transaction);
 }

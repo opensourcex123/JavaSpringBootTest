@@ -46,4 +46,11 @@ public class ProductDao extends ServiceImpl<ProductMapper, Product> {
     public int deleteProduct(long id) {
         return productMapper.deleteById(id);
     }
+
+    public int updateStorage(Long productId, Integer productStorage) {
+        Product product = new Product();
+        product.setId(productId);
+        product.setProductStock(productStorage);
+        return productMapper.updateById(product);
+    }
 }

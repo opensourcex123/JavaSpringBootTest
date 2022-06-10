@@ -11,4 +11,5 @@ public interface IProductService {
     int createProduct(Product product);
     List<Product> getProductByPublisherName(Product product);
     int deleteProduct(Product product);
+    int reduceStorage(Product product);
 }

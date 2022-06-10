@@ -55,4 +55,14 @@ public class TransactionController {
 
         return ResultData.success("success");
     }
+
+    @PostMapping("/updateTransaction")
+    public ResultData updateTransaction(@RequestBody Transaction transaction) throws Exception {
+        int res = transactionService.updateTransaction(transaction);
+        if (res != 1) {
+            throw new Exception("失败");
+        }
+
+        return ResultData.success("success");
+    }
 }

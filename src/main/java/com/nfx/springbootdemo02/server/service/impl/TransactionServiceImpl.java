@@ -75,4 +75,9 @@ public class TransactionServiceImpl implements ITransactionService {
         transactionDao.updateIsReceive(id, 1);
         return 1;
     }
+
+    @Override
+    public int updateTransaction(Transaction transaction) {
+        return transactionDao.updateIsDeliver(transaction.getId());
+    }
 }
