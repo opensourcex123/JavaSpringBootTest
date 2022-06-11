@@ -30,6 +30,7 @@ public class TransactionDao extends ServiceImpl<TransactionMapper, Transaction> 
     public List<Transaction> getDataByPayer(String payer) {
         QueryWrapper<Transaction> wrapper = new QueryWrapper<>();
         wrapper.eq("payer", payer);
+        wrapper.eq("is_deliver", 1);
 
         return transactionMapper.selectList(wrapper);
     }
